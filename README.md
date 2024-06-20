@@ -7,10 +7,10 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 ##A description of the project: what it does, the aim of the project, and what you learned
 
 
-##Installation instructions
+## Installation instructions
 
 
-##Usage instructions
+## Usage instructions
 - You can guess one letter at a time.
 
 - there are 2 functions in this projects
@@ -25,7 +25,7 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 - otherwise it will say the chosen letter was not in the word
 
 
-##File structure of the project
+## File structure of the project
 + milestone_2.py
 - this is just a file that gets user input
 - and checks to see if it is valid
@@ -36,3 +36,45 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 
 + milestone_3_2.py
 - here we use functions to make it more concise
+
++milestone_4.py
+- In this file we create a Hangman class 
+
+This class has the following methods:
+## '__init__ method' - Used to initialise an instance from the Hangman class 
+    + attributes used to initalise class
+        - 'word_list' - we initialise the class by passing in a list; which is the different words that can be selected for the game
+        - 'num_lives' - this is the number of lives and chances the user has to select the right characters - by default it is set to 5
+    
+    +Other attributes in this class
+        - 'word' - this uses the random function to select a random word from the 'word_list' attribute passed into the function
+        - 'word_guessed' - this converts the letters in the attribute 'word' to all '_' so we can play the game
+        - 'num_letters' - this is the number of unique letters in the word that have not been guessed yet - default value of 0
+        - 'list_of_guesses' - this is a list of the guesses that have already been tried 
+
+
+## 'check_guess method' - checks to see if the letter we guess is valid and if it is in the word 
+- 'guess' - takes this attribute as a parameter in this method
+
+### What does this method do? 
+converts this 'guess' into lowercase 
+- checks to see if the 'guess' is in the 'word' attribute
+- checks to see which letters are in the 'word' from our 'guess' and stores this in an attribute called 'words_with_letter'
+- then if 'words_with_letter' is not empty, for every letter in the word, if we guess correctly, it finds the index position of the letter
+- then replaces the '_' in the 'word_guessed' attribute with the letter we chose in 'guess' 
+- it then reduces the attribute 'num_letters' by 1 and prints a message saying it was a good guess
+- if we don't guess correctly, it reduces the 'num_lives' by 1 and print a message saying it was not a good guess and prints the new 'num_lives' left
+
+
+## ask_for_input() - asks user to take a guess
+
+### What does this method do?
+- 'Guess' - Continuously asks the user for input, asking the user to enter a single letter - this is store as the 'guess' attribute
+- Performs some checks on the 'guess' 
+    - checks to see if it is valid ; only valid if it is one letter and is from the alphabet
+        -  if not valid, it prints a message saying letter chosen is invalid
+    - checks to see if we have already guesses this letter
+        - uses the 'list_of_guesses' to check if the 'guess' is a part of this list
+    - if all checks are fine, it runs the check_guess() method on the guess 
+        - after running this method it adds the 'guess' to the 'list_of_guesses' list 
+
