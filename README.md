@@ -73,7 +73,7 @@ converts this 'guess' into lowercase
 - Performs some checks on the 'guess' 
     - checks to see if it is valid ; only valid if it is one letter and is from the alphabet
         -  if not valid, it prints a message saying letter chosen is invalid
-    - checks to see if we have already guesses this letter
+    - checks to see if we have already guessed this letter
         - uses the 'list_of_guesses' to check if the 'guess' is a part of this list
     - if all checks are fine, it runs the check_guess() method on the guess 
         - after running this method it adds the 'guess' to the 'list_of_guesses' list 
