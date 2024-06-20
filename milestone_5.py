@@ -91,7 +91,6 @@ class Hangman:
 		        - Input message to enter a single letter
                 - Prints message if invalid input
                 - Prints message if you have already tried that letter
-                -  
         '''
         #while True:
         self.guess = input("Enter a single letter: ") #asks user for input
@@ -110,6 +109,19 @@ class Hangman:
 
 #Function that takes 'word_list' as a parameter
 def play_game(word_list):
+    '''
+    What does the function do?
+            - Creates a loop to play the game and to check how  many lives the user has left.
+                - checks num_lives - if 0, game has ended, prints message and breaks out loop
+                - checks num_letters - if more than 0, calls the 'ask_for_input' method to start the game 
+                - checks both - if num_lives not 0 and num_letters not more than 0, prints message saying user has won and breaks out loop 
+
+        Arguments:
+            - 'word_list': takes a list of words
+
+        Attributes/Variables:
+            - N/A
+    '''
     game = Hangman(word_list)
         
     while True:
