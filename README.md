@@ -30,14 +30,14 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 - this is just a file that gets user input
 - and checks to see if it is valid
 
-+ milestone_3.py
+# milestone_3.py
 - here we do the same as above, but also continue checking until the input is valid
 - also checks if the letter is in the word 
 
-+ milestone_3_2.py
+# milestone_3_2.py
 - here we use functions to make it more concise
 
-+milestone_4.py
+# milestone_4.py
 - In this file we create a Hangman class 
 
 This class has the following methods:
@@ -83,3 +83,27 @@ converts this 'guess' into lowercase
 - Create a list of words 
 - Then you can create an instance of the Hangman class and parse in the list
 - Call the ask_for_input() method on this instance
+
+
+# milestone_5.py
+In this file we create a function 'play_game' in order to play the game
+We also made some changes to the original milestone_4.py file for the hangman class
+
+# Changes made to milestone_4.py
++ ask_for_input() method
+    - Removed the while loop as it was infinitely looping
+    - added another elif condition that checked for no user input i.e. "" empty string and print invalid message
+    - 
+
+
+## play_game function
+What does this function do?
+- This method takes a list 'word_list' as a parameter and instantiates a Hangman object from the Hangman Class
+- It then runs through a loop checking certain conditions
+    + if the number of lives is 0, it breaks out the loop and prints a message
+    + if the number of letters is more than 0, it calls the ask_for_input() method from the Hangman class to ask user for input
+    + otherwise if the 'num_lives' attribute is 0 and the 'num_letters' attribute is less than 0, it breaks out the loop and prints a message saying the user has won.
+
+### How to use the function
+- create a list of chosen words for the game
+- parse this list into the play_game() function
