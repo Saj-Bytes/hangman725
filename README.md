@@ -78,3 +78,8 @@ converts this 'guess' into lowercase
     - if all checks are fine, it runs the check_guess() method on the guess 
         - after running this method it adds the 'guess' to the 'list_of_guesses' list 
 
+
+## How to call the function
+- Create a list of words 
+- Then you can create an instance of the Hangman class and parse in the list
+- Call the ask_for_input() method on this instance

@@ -30,7 +30,7 @@ class Hangman:
         #other attributes
         self.word = random.choice(word_list) 
         self.word_guessed = ['_']*len(self.word)   
-        self.num_letters = 0 
+        self.num_letters = len(set(self.word))
         self.list_of_guesses = [] 
 
 
@@ -93,17 +93,17 @@ class Hangman:
                 - Prints message if you have already tried that letter
                 -  
         '''
-        while True:
-            self.guess = input("Enter a single letter: ") #asks user for input
-           
-            #checks to see if it is valid
-            if not (len(self.guess) == 1 & self.guess.isalpha()) :
-                print("Invalid letter. Please, enter a single alphabetical character")
-            elif self.guess in self.list_of_guesses:
-                 print("You already tried that letter!")
-            else:
-                self.check_guess(self.guess)
-                self.list_of_guesses += self.guess
+        #while True:
+        self.guess = input("Enter a single letter: ") #asks user for input
+        
+        #checks to see if it is valid
+        if not (len(self.guess) == 1 & self.guess.isalpha()) :
+            print("Invalid letter. Please, enter a single alphabetical character")
+        elif self.guess in self.list_of_guesses:
+                print("You already tried that letter!")
+        else:
+            self.check_guess(self.guess)
+            self.list_of_guesses += self.guess
 
 
 list1 = ['apple', 'banana', 'cherry']
